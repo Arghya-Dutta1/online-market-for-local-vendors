@@ -15,27 +15,25 @@ contain the same styles page. -->
   <link rel="stylesheet" href="vdrinfostyle.css">
 </head>
 <body>
-     <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="logo.png" alt="Website Logo">
-      </a>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="vendor-page.html">Vendors</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="contact-us.html">Contact</a></li>
-      </ul>
-    </nav>
-    <!-- <div class="search-box">
-      <form>
-        <input type="text" placeholder="Search...">
-        <button type="submit">Go</button>
-      </form>
-    </div> -->
-  </header>
+      <header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.png" alt="Website Logo">
+    </a>
+  </div>
+  <input type="checkbox" id="menu-toggle" style="display: none;">
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+  <nav>
+    <ul class="menu">
+      <li><a href="journey.html" style="color: orange;">Our Journey</a></li>
+      <li><a href="vendor-page.html">Vendors</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contact-us.html">Contact</a></li>
+      
+    </ul>
+  </nav>
+</header>
   
   <div class="shopinfo">
 <h1 id="vendorName"></h1>
@@ -53,19 +51,19 @@ contain the same styles page. -->
 <form id="addItemForm" class= additemform>
   <div class="form-group">
     <label for="name">Name:</label>
-    <input type="text" class="form-control" id="name">
+    <input type="text" class="form-control" id="name" required>
   </div>
   <div class="form-group">
     <label for="price">Price:</label>
-    <input type="number" class="form-control" id="price">
+    <input type="number" class="form-control" id="price" pattern="[0-9]+(\.[0-9]+)?" min="0" required>
   </div>
   <div class="form-group">
     <label for="image_url">Image URL:</label>
-    <input type="text" class="form-control" id="image_url">
+    <input type="text" class="form-control" id="image_url" required>
   </div>
   <div class="form-group">
     <label for="description">Description:</label>
-    <textarea class="form-control" id="description"></textarea>
+    <textarea class="form-control" id="description" required></textarea>
   </div>
   <button type="submit" class="btn btn-primary submit" id="addItemButton">Submit</button>
 </form>
