@@ -13,12 +13,7 @@ body {
 }
 
 /* Set max width for the article container */
-article {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-  background-color: rgb(255, 240, 195);
-}
+
 
 /* Style heading and paragraphs */
 h1 {
@@ -38,11 +33,7 @@ h2 {
 margin: 60px 0 40px;
 }
 
-p {
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
+
 
 /* Add spacing between list items */
 ul {
