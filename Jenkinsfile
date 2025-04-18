@@ -15,7 +15,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                bat 'git clone ${REPO_URL}'
+                bat "git clone $REPO_URL"
             }
         }
 
