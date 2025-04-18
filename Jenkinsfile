@@ -46,7 +46,7 @@ pipeline {
         success {
             mail to: 'aryadutta004@gmail.com',
                  subject: "✅ Build Success - #${env.BUILD_NUMBER}",
-                 body: "Diabetes Prediction pipeline ran successfully!"
+                 body: "Your Jenkins pipeline ran successfully!"
         }
         failure {
             mail to: 'aryadutta004@gmail.com',
