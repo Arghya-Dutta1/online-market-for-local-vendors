@@ -1,10 +1,31 @@
-version: '3.8'
-
 services:
-  server:
-    build: .
+  frontend:
+    build:
+      context: ./public
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: ./src/Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./src:/app/src          # Live code sync
-      # - ./data:/app/src/data    # SQLite DB persistence
+      - ./src:/app/src
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  data:
