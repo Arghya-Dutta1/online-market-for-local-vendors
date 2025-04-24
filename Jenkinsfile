@@ -46,12 +46,36 @@ pipeline {
         success {
             mail to: 'aryadutta004@gmail.com',
                  subject: "✅ Build Success - #${env.BUILD_NUMBER}",
-                 body: "Your Jenkins pipeline ran successfully!"
+                 body: """
+    🎉 Your Jenkins pipeline ran successfully!
+
+    📄 Job Name: ${env.JOB_NAME}
+    🔢 Build Number: ${env.BUILD_NUMBER}
+    🌿 Branch: ${env.GIT_BRANCH}
+    🔗 Build URL: ${env.BUILD_URL}
+    🕒 Timestamp: ${new Date()}
+    ⏱ Duration: ${currentBuild.durationString}
+
+    ✅ Status: SUCCESS
+    """
         }
         failure {
             mail to: 'aryadutta004@gmail.com',
                  subject: "❌ Build Failed - #${env.BUILD_NUMBER}",
-                 body: "Pipeline failed. Please check Jenkins logs."
+                 body: """
+    ⚠️ Pipeline build failed.
+
+    📄 Job Name: ${env.JOB_NAME}
+    🔢 Build Number: ${env.BUILD_NUMBER}
+    🌿 Branch: ${env.GIT_BRANCH}
+    🔗 Build URL: ${env.BUILD_URL}
+    🕒 Timestamp: ${new Date()}
+    ⏱ Duration: ${currentBuild.durationString}
+
+    ❌ Status: FAILURE
+
+    Please check the Jenkins console output for more details.
+    """
         }
     }
 }
